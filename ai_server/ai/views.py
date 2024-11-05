@@ -6,15 +6,13 @@ from rest_framework import status
 from rest_framework.parsers import MultiPartParser
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from ai_server.configure import settings
+from configure import settings
 
-# sys.path에 M3D-VTON/util 경로 추가
-sys.path.append(os.path.join(settings.BASE_DIR, 'M3D-VTON', 'util'))
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'M3D-VTON'))
+sys.path.append(os.path.join(settings.BASE_DIR, 'M3D-VTON'))
 
 # data_preprocessing 모듈 import
 try:
-    from data_preprocessing import preprocess_data
+    from util.data_preprocessing import preprocess_data
     from model_runner import run_model
     from rgbd2pcd import run_rgbd2pcd
 except ImportError as e:
