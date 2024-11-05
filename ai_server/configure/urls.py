@@ -16,8 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from ai.views import ThreeDTryOnView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("ai/", )
+    path("ai/", ThreeDTryOnView.as_view(), name='ThreeDtryon'),
 ]
