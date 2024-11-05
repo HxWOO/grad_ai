@@ -1,0 +1,1 @@
+cloth.png    cloth_sample.png
