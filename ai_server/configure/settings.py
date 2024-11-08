@@ -27,7 +27,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,14 +41,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     "rest_framework",
-    "corsheaders"
     "ai",
-    "M3D-VTON",
 ]
 
 # media 파일 경로 추가
-MEDIA_URL = '/user-request/'
-MEDIA_ROOT = BASE_DIR / 'user-request'
+MEDIA_ROOT = BASE_DIR / 'M3D-VTON'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -58,14 +55,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-
-    "corsheaders.middleware.CorsMiddleware",
-]
-
-
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    #java_서버_url_추가해야함
 ]
 
 ROOT_URLCONF = "configure.urls"
