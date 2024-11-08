@@ -45,7 +45,7 @@ class ThreeDTryOnView(APIView):
 
         # 커스텀 데이터 전처리
         try:
-            command = ['python', MPV3D_root + 'util/data_preprocessing.py', '--MPV3D_root',
+            command = ['python', MPV3D_root + '/util/data_preprocessing.py', '--MPV3D_root',
                        MPV3D_root + '/mpv3d_example']
             data_result = subprocess.run(command, capture_output=True, text=True, check=True)
             # 실행 결과 출력
@@ -76,7 +76,7 @@ class ThreeDTryOnView(APIView):
 
         # rgbd -> pcd 변환
         try:
-            command = ['python', MPV3D_root + 'rgbd2pcd.py']
+            command = ['python', MPV3D_root + '/rgbd2pcd.py']
             rgbd_result = subprocess.run(command, capture_output=True, text=True, check=True)
             # 실행 결과 출력
             print("스크립트 출력:")
